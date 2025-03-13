@@ -1,0 +1,19 @@
+<?php
+
+namespace App\Enums;
+
+enum CategoryAlias: string
+{
+  case TECHNOLOGY = 'TECHNOLOGY';
+  case GAMING = 'GAMING';
+  case ENTERTAINMENT = 'ENTERTAINMENT';
+  case SCIENCE = 'SCIENCE';
+  case SPORTS = 'SPORTS';
+  case BUSINESSFINANCE = 'BUSINESSFINANCE';
+  case REALESTATE = 'REALESTATE';
+  case VEHICLES = 'VEHICLES';
+  case LIFESTYLE = 'LIFESTYLE';
+  case EDUCATION = 'EDUCATION';
+  case HEALTHWELLNESS = 'HEALTHWELLNESS';
+  case MEMESHUMOR = 'MEMESHUMOR';
+}
