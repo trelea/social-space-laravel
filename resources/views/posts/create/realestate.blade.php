@@ -7,13 +7,72 @@
         <x-create-main-post-form />
 
         <div class="w-full border-t pt-4 border-zinc-400">
-          <label for="" class="text-xl font-semibold">{{$category_name}} Caracteristics</label>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus placeat quisquam quidem illo porro minus eum aut quaerat maiores rerum, nobis modi amet dolorum consequuntur facilis necessitatibus ipsum. Nemo quam quia fugit aut quae doloribus aspernatur consequuntur aperiam laborum voluptates, minima autem nobis sapiente obcaecati, aliquam perferendis. Sint accusamus cumque similique perspiciatis labore beatae fuga dolorem eligendi impedit doloribus cum exercitationem, nostrum nisi illum unde iste nihil veniam autem officiis vel ipsa! Impedit non ratione eligendi molestiae eveniet nisi, eum exercitationem reprehenderit blanditiis qui ab beatae eos cum, rerum magni ad tempora repellat corporis nesciunt. Nam sit pariatur quas doloremque exercitationem nemo quis modi dicta architecto iusto id incidunt eum dolorem aspernatur error nostrum harum eligendi quidem magni voluptas, doloribus inventore voluptate! Dolores, ipsa nostrum modi magni vero laudantium perspiciatis architecto cumque sit porro iste velit iure vel, praesentium odio similique iusto illum veritatis accusantium voluptates deleniti. Consequuntur quisquam ducimus iusto enim animi et, soluta itaque est porro! Tempore sit est minus qui cupiditate quod veritatis maxime modi, nam rerum adipisci quae saepe laudantium reprehenderit, distinctio temporibus aut vero ab asperiores blanditiis. Dolore quasi cumque nam modi quisquam ipsam, corrupti maxime ducimus illo alias soluta inventore quo hic ipsa perferendis.</p>
+          <label for="" class="text-xl font-semibold">{{$category_name}} Characteristics</label>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Property Type</legend>
+            <select class="select w-full" name="property_type">
+              <option value="house">House</option>
+              <option value="apartment">Apartment</option>
+              <option value="condo">Condo</option>
+              <option value="land">Land</option>
+              <option value="commercial">Commercial</option>
+            </select>
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Price Range</legend>
+            <div class="flex gap-4">
+              <input type="number" class="input w-full" name="price_min" placeholder="Min">
+              <span class="self-center">to</span>
+              <input type="number" class="input w-full" name="price_max" placeholder="Max">
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Location</legend>
+            <input type="text" class="input w-full" name="location" placeholder="Neighborhood, City, State">
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Bedrooms/Bathrooms</legend>
+            <div class="flex gap-4">
+              <input type="number" class="input w-full" name="bedrooms" placeholder="Bedrooms">
+              <input type="number" class="input w-full" name="bathrooms" placeholder="Bathrooms">
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Square Footage</legend>
+            <input type="number" class="input w-full" name="square_footage" placeholder="Approximate size">
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Amenities</legend>
+            <div class="flex flex-wrap gap-4">
+              <label class="inline-flex items-center">
+                <input type="checkbox" name="amenities[]" value="pool" class="form-checkbox">
+                <span class="ml-2">Pool</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="checkbox" name="amenities[]" value="garage" class="form-checkbox">
+                <span class="ml-2">Garage</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="checkbox" name="amenities[]" value="garden" class="form-checkbox">
+                <span class="ml-2">Garden</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="checkbox" name="amenities[]" value="gym" class="form-checkbox">
+                <span class="ml-2">Gym</span>
+              </label>
+            </div>
+          </fieldset>
         </div>
       </form>
     </div>
-    
-    
+
+
 
   </section>
 </x-layout>

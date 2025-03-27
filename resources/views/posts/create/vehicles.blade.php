@@ -7,13 +7,74 @@
         <x-create-main-post-form />
 
         <div class="w-full border-t pt-4 border-zinc-400">
-          <label for="" class="text-xl font-semibold">{{$category_name}} Caracteristics</label>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus placeat quisquam quidem illo porro minus eum aut quaerat maiores rerum, nobis modi amet dolorum consequuntur facilis necessitatibus ipsum. Nemo quam quia fugit aut quae doloribus aspernatur consequuntur aperiam laborum voluptates, minima autem nobis sapiente obcaecati, aliquam perferendis. Sint accusamus cumque similique perspiciatis labore beatae fuga dolorem eligendi impedit doloribus cum exercitationem, nostrum nisi illum unde iste nihil veniam autem officiis vel ipsa! Impedit non ratione eligendi molestiae eveniet nisi, eum exercitationem reprehenderit blanditiis qui ab beatae eos cum, rerum magni ad tempora repellat corporis nesciunt. Nam sit pariatur quas doloremque exercitationem nemo quis modi dicta architecto iusto id incidunt eum dolorem aspernatur error nostrum harum eligendi quidem magni voluptas, doloribus inventore voluptate! Dolores, ipsa nostrum modi magni vero laudantium perspiciatis architecto cumque sit porro iste velit iure vel, praesentium odio similique iusto illum veritatis accusantium voluptates deleniti. Consequuntur quisquam ducimus iusto enim animi et, soluta itaque est porro! Tempore sit est minus qui cupiditate quod veritatis maxime modi, nam rerum adipisci quae saepe laudantium reprehenderit, distinctio temporibus aut vero ab asperiores blanditiis. Dolore quasi cumque nam modi quisquam ipsam, corrupti maxime ducimus illo alias soluta inventore quo hic ipsa perferendis.</p>
+          <label for="" class="text-xl font-semibold">{{$category_name}} Characteristics</label>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Vehicle Type</legend>
+            <select class="select w-full" name="vehicle_type">
+              <option value="car">Car</option>
+              <option value="motorcycle">Motorcycle</option>
+              <option value="truck">Truck</option>
+              <option value="suv">SUV</option>
+              <option value="electric">Electric Vehicle</option>
+              <option value="classic">Classic/Vintage</option>
+            </select>
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Make/Model/Year</legend>
+            <div class="flex gap-4">
+              <input type="text" class="input w-full" name="make" placeholder="Make (Toyota, Ford, etc.)">
+              <input type="text" class="input w-full" name="model" placeholder="Model (Camry, F-150, etc.)">
+              <input type="number" class="input w-full" name="year" placeholder="Year">
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Price Range</legend>
+            <div class="flex gap-4">
+              <input type="number" class="input w-full" name="price_min" placeholder="Min">
+              <span class="self-center">to</span>
+              <input type="number" class="input w-full" name="price_max" placeholder="Max">
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Key Specifications</legend>
+            <div class="grid grid-cols-2 gap-4">
+              <input type="text" class="input" name="engine" placeholder="Engine">
+              <input type="text" class="input" name="mpg" placeholder="MPG/Range">
+              <input type="text" class="input" name="horsepower" placeholder="Horsepower">
+              <input type="text" class="input" name="acceleration" placeholder="0-60 time">
+            </div>
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Fuel Type</legend>
+            <div class="flex flex-wrap gap-4">
+              <label class="inline-flex items-center">
+                <input type="radio" name="fuel_type" value="gasoline" class="form-radio">
+                <span class="ml-2">Gasoline</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="radio" name="fuel_type" value="diesel" class="form-radio">
+                <span class="ml-2">Diesel</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="radio" name="fuel_type" value="electric" class="form-radio">
+                <span class="ml-2">Electric</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input type="radio" name="fuel_type" value="hybrid" class="form-radio">
+                <span class="ml-2">Hybrid</span>
+              </label>
+            </div>
+          </fieldset>
         </div>
       </form>
     </div>
-    
-    
+
+
 
   </section>
 </x-layout>

@@ -1,19 +1,62 @@
 <x-layout>
-  <section class="flex flex-col items-center w-full py-10">
-    {{-- MAIN FORM --}}
-    <div class="w-1/2 flex flex-col gap-10">
-      <h1 class="text-4xl text-start font-bold">Category: {{$category_name}}</h1>
-      <form action="" class="flex flex-col gap-6">
-        <x-create-main-post-form />
+    <section class="flex flex-col items-center w-full py-10">
+        {{-- MAIN FORM --}}
+        <div class="w-1/2 flex flex-col gap-10">
+            <h1 class="text-4xl text-start font-bold">Category: {{$category->category}}</h1>
+            <form action="{{route('posts.store.action', $category->id)}}" method="POST" enctype="multipart/form-data"
+                class="flex flex-col gap-6">
+                @csrf
+                @method('POST')
+                {{-- Main Form --}}
+                <x-create-main-post-form />
 
-        <div class="w-full border-t pt-4 border-zinc-400">
-          <label for="" class="text-xl font-semibold">{{$category_name}} Caracteristics</label>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus placeat quisquam quidem illo porro minus eum aut quaerat maiores rerum, nobis modi amet dolorum consequuntur facilis necessitatibus ipsum. Nemo quam quia fugit aut quae doloribus aspernatur consequuntur aperiam laborum voluptates, minima autem nobis sapiente obcaecati, aliquam perferendis. Sint accusamus cumque similique perspiciatis labore beatae fuga dolorem eligendi impedit doloribus cum exercitationem, nostrum nisi illum unde iste nihil veniam autem officiis vel ipsa! Impedit non ratione eligendi molestiae eveniet nisi, eum exercitationem reprehenderit blanditiis qui ab beatae eos cum, rerum magni ad tempora repellat corporis nesciunt. Nam sit pariatur quas doloremque exercitationem nemo quis modi dicta architecto iusto id incidunt eum dolorem aspernatur error nostrum harum eligendi quidem magni voluptas, doloribus inventore voluptate! Dolores, ipsa nostrum modi magni vero laudantium perspiciatis architecto cumque sit porro iste velit iure vel, praesentium odio similique iusto illum veritatis accusantium voluptates deleniti. Consequuntur quisquam ducimus iusto enim animi et, soluta itaque est porro! Tempore sit est minus qui cupiditate quod veritatis maxime modi, nam rerum adipisci quae saepe laudantium reprehenderit, distinctio temporibus aut vero ab asperiores blanditiis. Dolore quasi cumque nam modi quisquam ipsam, corrupti maxime ducimus illo alias soluta inventore quo hic ipsa perferendis.</p>
+                {{-- Characteristics--}}
+                <div class="w-full border-t pt-4 border-zinc-400">
+                    <label for="" class="text-xl font-semibold">{{$category->category}} Characteristics</label>
+
+                    <fieldset class="fieldset w-full mt-4">
+                        <legend class="fieldset-legend text-sm font-normal">Financial Focus</legend>
+                        <select class="select w-full" name="finance_type">
+                            <option value="stock">Stock Market</option>
+                            <option value="crypto">Cryptocurrency</option>
+                            <option value="economy">Economy</option>
+                            <option value="startup">Startups</option>
+                            <option value="personal">Personal Finance</option>
+                        </select>
+                    </fieldset>
+
+                    <fieldset class="fieldset w-full mt-4">
+                        <legend class="fieldset-legend text-sm font-normal">Companies/Stocks</legend>
+                        <input type="text" class="input w-full" name="companies" placeholder="AAPL, TSLA, etc.">
+                    </fieldset>
+
+                    <fieldset class="fieldset w-full mt-4">
+                        <legend class="fieldset-legend text-sm font-normal">Market Impact</legend>
+                        <div class="flex gap-4">
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="impact" value="bullish" class="form-radio">
+                                <span class="ml-2">Bullish</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="impact" value="bearish" class="form-radio">
+                                <span class="ml-2">Bearish</span>
+                            </label>
+                            <label class="inline-flex items-center">
+                                <input type="radio" name="impact" value="neutral" class="form-radio">
+                                <span class="ml-2">Neutral</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="fieldset w-full mt-4">
+                        <legend class="fieldset-legend text-sm font-normal">Key Metrics</legend>
+                        <textarea class="textarea w-full" rows="3" name="metrics"
+                            placeholder="Revenue growth, user numbers, etc."></textarea>
+                    </fieldset>
+                </div>
+
+                <button class="btn btn-primary">Create Post</button>
+            </form>
         </div>
-      </form>
-    </div>
-    
-    
-
-  </section>
+    </section>
 </x-layout>

@@ -1,5 +1,5 @@
 <div class="w-full border-t pt-4 border-zinc-400">
-    <label for="" class="text-xl font-semibold">Common Values</label>
+    <label for="" class="text-xl font-semibold">Post Values</label>
     {{-- thumbnails --}}
     <fieldset class="fieldset w-full">
         <legend class="fieldset-legend text-sm font-normal">Post Images</legend>
@@ -14,19 +14,28 @@
                 Drop files here or
                 <span class="text-primary underline">browse</span>
             </span>
-            <input type="file" class="hidden" id="file-input" multiple>
+            <input name="images[]" type="file" class="hidden" id="file-input" multiple value="{{old('images[]')}}">
         </label>
         <div id="preview-container" class="grid grid-cols-8 gap-4"></div>
+        @error('images.*')
+        <p class="text-red-500">{{$message}}</p>
+        @enderror
     </fieldset>
     {{-- title --}}
     <fieldset class="fieldset w-full">
         <legend class="fieldset-legend text-sm font-normal">Post Title</legend>
-        <input type="text" class="input w-full" placeholder="Post Title" />
+        <input name="title" type="text" class="input w-full" placeholder="Post Title" />
+        @error('title')
+        <p class="text-red-500">{{$message}}</p>
+        @enderror
     </fieldset>
     {{-- description --}}
     <fieldset class="fieldset w-full">
         <legend class="fieldset-legend text-sm font-normal">Post Description</legend>
-        <textarea class="textarea w-full" rows="10" placeholder="Post Title"></textarea>
+        <textarea name="description" class="textarea w-full" rows="10" placeholder="Post Title"></textarea>
+        @error('description')
+        <p class="text-red-500">{{$message}}</p>
+        @enderror
     </fieldset>
 
     {{-- drop zone script --}}

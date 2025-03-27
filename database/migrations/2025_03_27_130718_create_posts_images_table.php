@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('posts', function (Blueprint $table) {
+        Schema::create('posts_images', function (Blueprint $table) {
             $table->id();
-
-            $table->string('title');
-            $table->text('description');
-            $table->foreignId('user_id')->references('id')->on('users'); // Foreign Key
-
+            $table->string('path');
+            $table->string('original_name');
+            $table->string('mime_type');
+            $table->unsignedInteger('size');
+            $table->foreignId('post_id')->references('id')->on('posts'); // Foreign Key
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('posts');
+        Schema::dropIfExists('posts_images');
     }
 };

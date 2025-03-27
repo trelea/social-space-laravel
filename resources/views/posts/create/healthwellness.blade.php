@@ -7,13 +7,56 @@
         <x-create-main-post-form />
 
         <div class="w-full border-t pt-4 border-zinc-400">
-          <label for="" class="text-xl font-semibold">{{$category_name}} Caracteristics</label>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus placeat quisquam quidem illo porro minus eum aut quaerat maiores rerum, nobis modi amet dolorum consequuntur facilis necessitatibus ipsum. Nemo quam quia fugit aut quae doloribus aspernatur consequuntur aperiam laborum voluptates, minima autem nobis sapiente obcaecati, aliquam perferendis. Sint accusamus cumque similique perspiciatis labore beatae fuga dolorem eligendi impedit doloribus cum exercitationem, nostrum nisi illum unde iste nihil veniam autem officiis vel ipsa! Impedit non ratione eligendi molestiae eveniet nisi, eum exercitationem reprehenderit blanditiis qui ab beatae eos cum, rerum magni ad tempora repellat corporis nesciunt. Nam sit pariatur quas doloremque exercitationem nemo quis modi dicta architecto iusto id incidunt eum dolorem aspernatur error nostrum harum eligendi quidem magni voluptas, doloribus inventore voluptate! Dolores, ipsa nostrum modi magni vero laudantium perspiciatis architecto cumque sit porro iste velit iure vel, praesentium odio similique iusto illum veritatis accusantium voluptates deleniti. Consequuntur quisquam ducimus iusto enim animi et, soluta itaque est porro! Tempore sit est minus qui cupiditate quod veritatis maxime modi, nam rerum adipisci quae saepe laudantium reprehenderit, distinctio temporibus aut vero ab asperiores blanditiis. Dolore quasi cumque nam modi quisquam ipsam, corrupti maxime ducimus illo alias soluta inventore quo hic ipsa perferendis.</p>
+          <label for="" class="text-xl font-semibold">{{$category_name}} Characteristics</label>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Focus Area</legend>
+            <select class="select w-full" name="focus_area">
+              <option value="mental">Mental Health</option>
+              <option value="fitness">Fitness</option>
+              <option value="nutrition">Nutrition</option>
+              <option value="prevention">Prevention</option>
+              <option value="recovery">Recovery</option>
+            </select>
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Time Commitment</legend>
+            <input type="text" class="input w-full" name="time_commitment"
+              placeholder="10 minutes daily, 1 hour weekly, etc.">
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Difficulty Level</legend>
+            <select class="select w-full" name="difficulty">
+              <option value="beginner">Beginner</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="advanced">Advanced</option>
+            </select>
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Equipment Needed</legend>
+            <input type="text" class="input w-full" name="equipment" placeholder="Yoga mat, weights, etc.">
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Key Benefits</legend>
+            <textarea class="textarea w-full" rows="3" name="benefits"
+              placeholder="Stress relief, weight loss, etc."></textarea>
+          </fieldset>
+
+          <div class="mt-4">
+            <label class="inline-flex items-center">
+              <input type="checkbox" name="medical_disclaimer" class="form-checkbox">
+              <span class="ml-2">Include medical disclaimer</span>
+            </label>
+          </div>
         </div>
       </form>
     </div>
-    
-    
+
+
 
   </section>
 </x-layout>

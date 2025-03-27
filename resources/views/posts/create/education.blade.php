@@ -6,14 +6,47 @@
       <form action="" class="flex flex-col gap-6">
         <x-create-main-post-form />
 
+        {{-- Characteristics --}}
         <div class="w-full border-t pt-4 border-zinc-400">
-          <label for="" class="text-xl font-semibold">{{$category_name}} Caracteristics</label>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus placeat quisquam quidem illo porro minus eum aut quaerat maiores rerum, nobis modi amet dolorum consequuntur facilis necessitatibus ipsum. Nemo quam quia fugit aut quae doloribus aspernatur consequuntur aperiam laborum voluptates, minima autem nobis sapiente obcaecati, aliquam perferendis. Sint accusamus cumque similique perspiciatis labore beatae fuga dolorem eligendi impedit doloribus cum exercitationem, nostrum nisi illum unde iste nihil veniam autem officiis vel ipsa! Impedit non ratione eligendi molestiae eveniet nisi, eum exercitationem reprehenderit blanditiis qui ab beatae eos cum, rerum magni ad tempora repellat corporis nesciunt. Nam sit pariatur quas doloremque exercitationem nemo quis modi dicta architecto iusto id incidunt eum dolorem aspernatur error nostrum harum eligendi quidem magni voluptas, doloribus inventore voluptate! Dolores, ipsa nostrum modi magni vero laudantium perspiciatis architecto cumque sit porro iste velit iure vel, praesentium odio similique iusto illum veritatis accusantium voluptates deleniti. Consequuntur quisquam ducimus iusto enim animi et, soluta itaque est porro! Tempore sit est minus qui cupiditate quod veritatis maxime modi, nam rerum adipisci quae saepe laudantium reprehenderit, distinctio temporibus aut vero ab asperiores blanditiis. Dolore quasi cumque nam modi quisquam ipsam, corrupti maxime ducimus illo alias soluta inventore quo hic ipsa perferendis.</p>
+          <label for="" class="text-xl font-semibold">{{$category_name}} Characteristics</label>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Subject Area</legend>
+            <input type="text" class="input w-full" name="subject" placeholder="Mathematics, History, etc.">
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Grade Level</legend>
+            <select class="select w-full" name="grade_level">
+              <option value="elementary">Elementary</option>
+              <option value="middle">Middle School</option>
+              <option value="high">High School</option>
+              <option value="college">College</option>
+              <option value="professional">Professional</option>
+            </select>
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Resource Type</legend>
+            <select class="select w-full" name="resource_type">
+              <option value="lesson">Lesson Plan</option>
+              <option value="worksheet">Worksheet</option>
+              <option value="video">Video</option>
+              <option value="quiz">Quiz/Test</option>
+              <option value="activity">Activity</option>
+            </select>
+          </fieldset>
+
+          <fieldset class="fieldset w-full mt-4">
+            <legend class="fieldset-legend text-sm font-normal">Learning Objectives</legend>
+            <textarea class="textarea w-full" rows="3" name="objectives"
+              placeholder="What students will learn..."></textarea>
+          </fieldset>
         </div>
       </form>
     </div>
-    
-    
+
+
 
   </section>
 </x-layout>
