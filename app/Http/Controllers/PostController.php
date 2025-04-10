@@ -104,4 +104,18 @@ class PostController extends Controller
 
 
     }
+
+    public function index(Request $req)
+    {
+        // SELECTION
+        $posts = Post::with('images')->orderBy('created_at', 'desc');
+
+        // QUERY
+        if ($req->has('query')) {
+            $posts = $posts->where('<TABLE_COL>', 'like', '%' . $req->get('query', '') . '%');
+        }
+
+        // FINAL STEP SEND DATA TO VIEW
+        $posts = $posts->paginate(20);
+    }
 }
